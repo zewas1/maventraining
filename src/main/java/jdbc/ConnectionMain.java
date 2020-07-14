@@ -10,24 +10,24 @@ public class ConnectionMain {
         connection.close();
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM baldai");
-        List<Baldai> baldusarasas = getBaldai(resultSet);
+        List<Furniture> baldusarasas = getBaldai(resultSet);
         printBaldai(baldusarasas);
     }
 
-    private static void printBaldai(List<Baldai> baldusarasas) {
-        for (Baldai baldas : baldusarasas) {
+    private static void printBaldai(List<Furniture> baldusarasas) {
+        for (Furniture baldas : baldusarasas) {
             System.out.println("ID: " + baldas.getId() + " Name: " + baldas.getName());
         }
     }
 
-    private static List<Baldai> getBaldai(ResultSet resultSet) throws SQLException {
-        List<Baldai> baldusarasas = new ArrayList<>();
+    private static List<Furniture> getBaldai(ResultSet resultSet) throws SQLException {
+        List<Furniture> baldusarasas = new ArrayList<>();
         while (resultSet.next()) {
-            Baldai baldai = new Baldai();
-            baldai.setId(resultSet.getInt("id"));
-            baldai.setName(resultSet.getString("name"));
+            Furniture furniture = new Furniture();
+            furniture.setId(resultSet.getInt("id"));
+            furniture.setName(resultSet.getString("name"));
             System.out.println(resultSet.getString("name"));
-            baldusarasas.add(baldai);
+            baldusarasas.add(furniture);
         }
         return baldusarasas;
     }

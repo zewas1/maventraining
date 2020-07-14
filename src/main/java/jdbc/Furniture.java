@@ -1,25 +1,25 @@
 package jdbc;
 
-public class Baldai {
+public class Furniture {
     private int id;
     private String name;
-    private int kaina;
-    private int svoris;
+    private int price;
+    private int weight;
 
-    public int getKaina() {
-        return kaina;
+    public int getPrice() {
+        return price;
     }
 
-    public void setKaina(int kaina) {
-        this.kaina = kaina;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public int getSvoris() {
-        return svoris;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setSvoris(int svoris) {
-        this.svoris = svoris;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
 
